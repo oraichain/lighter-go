@@ -433,7 +433,7 @@ func main() {
 	js.Global().Set("SignWithdraw", js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 		return recoverPanic(func() js.Value {
 			if len(args) < 6 {
-				return js.ValueOf(map[string]interface{}{"error": "SignWithdraw expects 4 args: assetIndex, routeType, amount, nonce"})
+				return js.ValueOf(map[string]interface{}{"error": "SignWithdraw expects 6 args: assetIndex, routeType, amount, nonce"})
 			}
 			c, err := getClient(args)
 			if err != nil {
